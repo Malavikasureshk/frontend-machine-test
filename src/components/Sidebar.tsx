@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   AppstoreOutlined,
   TeamOutlined,
@@ -22,41 +23,51 @@ const navItems = [
 
 export default function Sidebar() {
   return (
-    <>
-      
+    <div
+      className="app-sidebar"
+      style={{
+        width: 64,
+        minHeight: "100vh",
+        background: "#141414",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        paddingTop: 0,
+        gap: 20,
+      }}
+    >
       <div
-        className="app-sidebar"
         style={{
           width: 64,
-          minHeight: "100vh",
-          background: "#141414",
+          height: 64,
           display: "flex",
-          flexDirection: "column",
           alignItems: "center",
-          paddingTop: 16,
-          gap: 20,
+          justifyContent: "center",
+          marginBottom: 8,
         }}
       >
-        {navItems.map((item) => (
-          <div
-            key={item.key}
-            style={{
-              width: 40,
-              height: 40,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              borderRadius: 8,
-              background: item.active ? "#fadb14" : "transparent",
-              color: item.active ? "#141414" : "#8c8c8c",
-              fontSize: 18,
-              cursor: "pointer",
-            }}
-          >
-            {item.icon}
-          </div>
-        ))}
+        <Image src="/logo_1.png" alt="Court Click logo" width={64} height={64} />
       </div>
-    </>
+
+      {navItems.map((item) => (
+        <div
+          key={item.key}
+          style={{
+            width: 40,
+            height: 40,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            borderRadius: 8,
+            background: item.active ? "#fadb14" : "transparent",
+            color: item.active ? "#141414" : "#8c8c8c",
+            fontSize: 18,
+            cursor: "pointer",
+          }}
+        >
+          {item.icon}
+        </div>
+      ))}
+    </div>
   );
 }

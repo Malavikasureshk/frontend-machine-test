@@ -10,29 +10,30 @@ interface TagItem {
 }
 
 const initialTags: TagItem[] = [
-  { name: "Subscription Pending", color: "blue" },
-  { name: "Nakul", color: "green" },
-  { name: "Follow up case for Details", color: "volcano" },
-  { name: "Add Case", color: "gold" },
-  { name: "Aadhaar Verified", color: "gold" },
-  { name: "Autopay Concern", color: "purple" },
-  { name: "Background Check for Case", color: "magenta" },
-  { name: "Call Back", color: "pink" },
-  { name: "Case Added", color: "cyan" },
-  { name: "Gouri", color: "green" },
+  { name: "Subscription Pending", color: "#5b8aa8" },
+  { name: "Nakul", color: "#7fae7e" },
+  { name: "Follow up case for Details", color: "#c96b4e" },
+  { name: "Add Case", color: "#a89a76" },
+  { name: "Aadhaar Verified", color: "#c9a83f" },
+  { name: "Autopay Concern", color: "#9b8bc4" },
+  { name: "Background Check for Case", color: "#5f7fa3" },
+  { name: "Call Back", color: "#c98a95" },
+  { name: "Case Added", color: "#9aa3ab" },
+  { name: "Gouri", color: "#5fa88e" },
 ];
 
 const colorOptions = [
-  "blue",
-  "green",
-  "volcano",
-  "gold",
-  "purple",
-  "magenta",
-  "pink",
-  "cyan",
-  "geekblue",
-  "purple",
+  "#5b8aa8",
+  "#7fae7e",
+  "#c96b4e",
+  "#a89a76",
+  "#c9a83f",
+  "#9b8bc4",
+  "#5f7fa3",
+  "#c98a95",
+  "#9aa3ab",
+  "#5fa88e",
+  "#5c1f3a",
 ];
 
 interface ChooseTagModalProps {
@@ -97,8 +98,13 @@ export default function ChooseTagModal({
               }}
             >
               <Tag
-                color={tag.color}
-                style={{ cursor: "pointer", marginRight: 8 }}
+                style={{
+                  cursor: "pointer",
+                  marginRight: 8,
+                  background: tag.color,
+                  color: "#fff",
+                  border: "none",
+                }}
                 onClick={() => toggleTag(tag.name)}
               >
                 {selected.includes(tag.name) ? "✓ " : ""}

@@ -7,6 +7,23 @@ export interface OrderDetails {
   documentType: string;
   orderNumber: string;
   orderDate: string;
+  orderId?: string;
+  trackingId?: string;
+  paymentCompleted?: string;
+  orderPlaced?: string;
+  assigned?: string;
+  applied?: string;
+  dispatched?: string;
+  delivered?: string;
+  address?: {
+    pincode: string;
+    line1: string;
+    line2: string;
+    city: string;
+    district: string;
+    state: string;
+    country: string;
+  };
 }
 
 export interface OrderRecord {
